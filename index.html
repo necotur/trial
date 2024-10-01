@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sketchfab Model Viewer</title>
+    <script src="https://static.sketchfab.com/api/sketchfab-viewer-1.12.1.js"></script>
+</head>
+<body>
+
+    <div id="sketchfab-viewer" style="width: 640px; height: 480px;"></div>
+
+    <script>
+        var iframe = document.getElementById('sketchfab-viewer');
+        var client = new Sketchfab('1.12.1', iframe);
+
+        var modelUid = '60ce9b5e01f84f20aaa12fe7c0f2f8b1';
+
+        client.init(modelUid, {
+            success: function(viewerApi) {
+                viewerApi.start();
+                viewerApi.addEventListener('viewerready', function() {
+                    console.log('Viewer is ready');
+                });
+            },
+            error: function() {
+                console.error('Viewer error');
+            },
+            autostart: 1,
+            transparent: 0,
+        });
+    </script>
+
+</body>
+</html>
