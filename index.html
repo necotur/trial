@@ -14,7 +14,8 @@
         var iframe = document.getElementById('sketchfab-viewer');
         var client = new Sketchfab('1.12.1', iframe);
 
-        var modelUid = '60ce9b5e01f84f20aaa12fe7c0f2f8b1'; // Replace with your model UID
+        // Use the correct Model UID
+        var modelUid = '60ce9b5e01f84f20aaa12fe7c0f2f8b1'; 
 
         client.init(modelUid, {
             success: function(viewerApi) {
